@@ -1,4 +1,3 @@
-import { query } from "express";
 import connection from "./DBConnect.js";
 
 const DBInterface = {
