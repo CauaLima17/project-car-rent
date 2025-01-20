@@ -16,7 +16,7 @@ connection.connect((err) => {
     process.exit(1)
   }
 
-  console.log("Erro na conexão com o banco: ", err.message);
+  console.log("Conectado com sucesso!");
 });
 
 connection.query = util.promisify(connection.query).bind(connection)
