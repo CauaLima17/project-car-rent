@@ -16,19 +16,19 @@ class Category {
 
     setDailyRate(daily_rate) {
         this._daily_rate = daily_rate 
-    }
+    };
 
     getId() {
         return this._id;
-    }
+    };
     
     getName() {
         return this._name;
-    }
+    };
 
-    getDailyRate(daily_rate) {
+    getDailyRate() {
         return this.daily_rate
-    }
-}
+    };
+};
 
 export default Category
