@@ -27,7 +27,7 @@ class Category {
     };
 
     getDailyRate() {
-        return this.daily_rate
+        return this._daily_rate
     };
 };
 
