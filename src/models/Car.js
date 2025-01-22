@@ -8,10 +8,6 @@ class Car{
         this._user_id = user_id
     };
     
-    setId(id){
-        this._id = id;
-    };
-
     setIs_rented(is_rented){
         this._is_rented = is_rented;
     };

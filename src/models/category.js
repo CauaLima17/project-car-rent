@@ -5,17 +5,8 @@ class Category {
         this._daily_rate = daily_rate
     };
 
-    
-    setId(id) {
-        this._id = id 
-    };
-
     setName(name) {
         this._name = name 
-    };
-
-    setDailyRate(daily_rate) {
-        this._daily_rate = daily_rate 
     };
 
     getId() {
