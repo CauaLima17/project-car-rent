@@ -15,7 +15,7 @@ const UserRepository = {
         return rows.map((row) => new User(row.id, row.name, row.email, row.password_hash));
     },
     async create(user) {
-        const result = await DBInterface.query('INSERT ON TABLE users (id, email, password_hash) VALUES (?,?,?)', [user.id, user.email, user.password_hash]);
+        const result = await DBInterface.query('INSERT INTO users (name, email, password_hash) VALUES (?,?,?)', [user.name, user.email, user.password_hash]);
         user.id = result.insertId;
         return
     }
