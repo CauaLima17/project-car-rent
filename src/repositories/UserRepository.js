@@ -20,3 +20,5 @@ const UserRepository = {
         return
     }
 }
+
+export default UserRepository;
