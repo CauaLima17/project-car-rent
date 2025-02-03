@@ -1,15 +1,20 @@
-class Car{
-    constructor(id, is_rented, brand, model, category_id, user_id){ 
-        this._id = id 
-        this._is_rented = is_rented
-        this._brand = brand 
-        this._model = model
-        this._category_id = category_id
-        this._user_id = user_id
+class Car {
+    constructor(id, user_id, car_img, brand, model, status, category_id){ 
+        this._id = id;
+        this.car_img = car_img;
+        this._user_id = user_id;
+        this._brand = brand;
+        this._model = model;
+        this.status = status;
+        this._category_id = category_id;
     };
     
-    setIs_rented(is_rented){
-        this._is_rented = is_rented;
+    setStatus(status){
+        this._status = status;
+    };
+
+    setCar_img(car_img){
+        this._car_img = car_img;
     };
 
     setBrand(brand){
@@ -32,8 +37,12 @@ class Car{
         return this._id;
     };
 
-    getIs_rented(){
-        return this._is_rented;
+    getCar_img(){
+        return this.car_img;
+    }
+
+    getStatus(){
+        return this._status;
     };
 
     getBrand(){
