@@ -20,8 +20,8 @@ const AuthController = {
         const token = jwt.sign({ id: user[0].getId(), username: user[0].getName(), email: user[0].getEmail() }, process.env.TOKEN_KEY || 'JWT-API-KEY-HERE', {expiresIn: '1h'})
         return res.status(200).json(token);
         
-      } catch (error) {
-        return res.status(500).json({ error: "ERR-Login: " + error });
+      } catch (err) {
+        return res.status(500).json({ error: "ERR-Login: " + err });
       }
     }
 }
