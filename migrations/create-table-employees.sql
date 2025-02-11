@@ -5,3 +5,4 @@ CREATE TABLE employee (
     tel VARCHAR(15) NOT NULL,
     sector VARCHAR(200) NOT NULL
 );
+
