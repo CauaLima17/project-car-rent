@@ -31,3 +31,5 @@ class Order {
   setDrop_off_date(value) { this._drop_off_date = value; }
   setOrder_description(value) { this._order_description = value; }
 }
+
+export default Order;

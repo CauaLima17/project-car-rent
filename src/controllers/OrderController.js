@@ -1,12 +1,12 @@
-import OrderRepository from "../repositories/OrderRepository";
+import OrderRepository from "../repositories/OrderRepository.js";
 
 const OrderController = {
   async getAll(req, res) {
     try {
-      orders = await OrderRepository.findAll();
-      res.status(200).json(orders);
+      const orders = await OrderRepository.findAll();
+      return res.status(200).json(orders);
     } catch (err) {
-      res.status(500).json({error: 'Erro na busca por pedidos: ' + err})
+      return res.status(500).json({error: 'Erro na busca por pedidos: ' + err})
     }
   },
   async create(req, res) {

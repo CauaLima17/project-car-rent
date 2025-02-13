@@ -4,7 +4,7 @@ CREATE TABLE cars (
     car_img VARCHAR(500) NOT NULL,
     model VARCHAR(100) NOT NULL,
     brand VARCHAR(100) NOT NULL,
-    status ENUM('Disponível', 'Reservado', 'Alugado') DEFAULT 'Disponível' NOT NULL,
+    status ENUM('Disponível', 'Reservado', 'Alugado') DEFAULT 'Disponível',
     category_id INT NOT NULL,
     description VARCHAR(400) NOT NULL, 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
