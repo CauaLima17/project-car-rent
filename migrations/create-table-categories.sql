@@ -4,3 +4,9 @@ CREATE TABLE categories (
     daily_rate DECIMAL(10,
     2) NOT NULL 
 );
+
+INSERT INTO categories (name, daily_rate)
+VALUES 
+    ('SUV', 150.00),
+    ('Sedan', 100.00),
+    ('Crossover', 120.00);

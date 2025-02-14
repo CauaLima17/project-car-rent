@@ -6,7 +6,7 @@ class Car {
         this._brand = brand;
         this._model = model;
         this.status = status;
-        this._category_id = category_id;
+        this.category_id = category_id;
         this.description = description
     };
     

@@ -4,9 +4,19 @@ const CarController = {
     async getAll(req, res) {
         try {
             const cars = await CarRepository.findAll()
-            res.status(200).json(cars);
+            return res.status(200).json(cars);
         } catch (err) {
-            res.status(500).json({ error: 'Erro na busca de carros: ' + err});
+            return res.status(500).json({ error: 'Erro na busca de carros: ' + err});
+        }
+    },
+
+    async getById(req, res) {
+        try {
+            const id = req.params.id
+            const car = await CarRepository.findById(id)
+            return res.status(200).json(car)
+        } catch (err) {
+            return res.status(500).json({ error: 'Erro na busca por carro: ' + err })
         }
     },
 
