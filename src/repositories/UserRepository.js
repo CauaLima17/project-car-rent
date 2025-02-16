@@ -6,7 +6,7 @@ const UserRepository = {
         const rows = await DBInterface.query('SELECT * FROM users');
         return rows.map((row => new User(row.id, row.name, row.email, row.password_hash)));
     },
-    async findAllById(id) {
+    async findById(id) {
         const rows = await DBInterface.query('SELECT * FROM users WHERE id = ?', [id]);
         return rows.map((row) => new User(row.id, row.name, row.email, row.password_hash));
     },

@@ -21,7 +21,7 @@ const AuthController = {
         return res.status(200).json(token);
         
       } catch (err) {
-        return res.status(500).json({ error: "ERR-Login: " + err });
+        return res.status(500).json({ error: "Erro de Login: " + err });
       }
     }
 }

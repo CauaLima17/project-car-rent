@@ -1,13 +1,23 @@
 import UserRepository from "../repositories/UserRepository.js";
+import bcrypt from 'bcryptjs';
 
 const UserController = {
     async getAll(req, res) {
         try {
             const users = await UserRepository.findAll();
             res.status(200).json(users);
-        } catch (error) {
-            res.status(500).json({ error: error })
+        } catch (err) {
+            res.status(500).json({ error: 'Erro na busca de usuários: ' + err })
         }
+    },
+    async getById(req, res) {
+      const id = req.params.id
+      try {
+        const user = await UserRepository.findById(id)
+        return res.status(200).json(user)
+      } catch (error) {
+        return res.status(500).json({ error: 'Erro na busca de usuário: ' + err})
+      }
     },
     async register(req, res) {
         try {

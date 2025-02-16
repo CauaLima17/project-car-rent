@@ -1,12 +1,12 @@
 class Car {
-    constructor(id, user_id, car_img, brand, model, status, category_id, description){ 
+    constructor(id, user_id, car_img, brand, model, status, category, description){ 
         this._id = id;
         this.car_img = car_img;
         this._user_id = user_id;
         this._brand = brand;
         this._model = model;
         this.status = status;
-        this.category_id = category_id;
+        this.category = category;
         this.description = description
     };
     
@@ -15,7 +15,7 @@ class Car {
     };
 
     setDescription(description){
-        this.description = this.description
+        this.description = description
     }
 
     setCar_img(car_img){
@@ -30,8 +30,8 @@ class Car {
         this._model = model;
     };
 
-    setCategory_id(category_id){
-        this._category_id = category_id;
+    setCategory(category){
+        this.category = category;
     };
 
     setUser_id(user_id){
@@ -63,7 +63,7 @@ class Car {
     };
 
     getCategory_id(){
-        return this._category_id;
+        return this.category;
     };
 
     getUser_id(){

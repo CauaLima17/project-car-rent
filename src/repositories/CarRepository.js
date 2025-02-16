@@ -1,15 +1,48 @@
 import Car from "../models/Car.js";
+import Category from '../models/category.js'
 import DBInterface from "../config/DBInterface.js";
 
 const CarRepository = {
     async findAll(){
-        const rows = await DBInterface.query("SELECT * FROM cars")
-        return rows.map(row => new Car(row.id, row.user_id, row.car_img, row.brand, row.model, row.status, row.category_id, row.description));
+        const rows = await DBInterface.query("SELECT cars.*, categories.name AS category_name, categories.daily_rate AS category_daily_rate FROM cars JOIN categories ON cars.category_id = categories.id")
+        return rows.map(row => {
+            const category = new Category(
+                row.category_id, 
+                row.category_name, 
+                row.category_daily_rate
+            )
+            return new Car(
+                row.id,
+                row.user_id,
+                row.car_img,
+                row.brand,
+                row.model,
+                row.status,
+                category,
+                row.description
+            );
+        });
     },
 
     async findById(id){
-        const rows = await DBInterface.query("SELECT * FROM cars WHERE id = (?)", [id])
-        return rows.map(row => new Car(row.id, row.user_id, row.car_img, row.brand, row.model, row.status, row.category_id, row.description));
+        const rows = await DBInterface.query("SELECT cars.*, FROM cars, categories.name AS category_name, categories.daily_rate AS category_daily_rate FROM cars JOIN categories ON cars.category_id = categories.id WHERE id = (?)", [id])
+        return rows.map(row => {
+            const category = new Category(
+                row.category_id, 
+                row.category_name, 
+                row.category_daily_rate
+            )
+            return new Car(
+                row.id,
+                row.user_id,
+                row.car_img,
+                row.brand,
+                row.model,
+                row.status,
+                category,
+                row.description
+            );
+        });
     },
 
     async create(car) {
