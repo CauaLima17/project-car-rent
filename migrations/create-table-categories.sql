@@ -7,6 +7,6 @@ CREATE TABLE categories (
 
 INSERT INTO categories (name, daily_rate)
 VALUES 
-    ('SUV', 150.00),
-    ('Sedan', 100.00),
-    ('Crossover', 120.00);
+    ('Luxuosa', 150.00),
+    ('Econômica', 100.00),
+    ('Intermediária', 120.00);
