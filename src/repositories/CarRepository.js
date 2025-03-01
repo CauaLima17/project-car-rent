@@ -25,7 +25,7 @@ const CarRepository = {
     },
 
     async findById(id){
-        const rows = await DBInterface.query("SELECT cars.*, FROM cars, categories.name AS category_name, categories.daily_rate AS category_daily_rate FROM cars JOIN categories ON cars.category_id = categories.id WHERE id = (?)", [id])
+        const rows = await DBInterface.query("SELECT cars.*, categories.name AS category_name, categories.daily_rate AS category_daily_rate FROM cars JOIN categories ON cars.category_id = categories.id WHERE cars.id = (?) ", [id])
         return rows.map(row => {
             const category = new Category(
                 row.category_id, 

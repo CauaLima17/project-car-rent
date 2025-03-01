@@ -17,8 +17,14 @@ const AuthController = {
           return res.status(400).json({ error: "Senha incorreta." });
         }
 
-        const token = jwt.sign({ id: user[0].getId(), username: user[0].getName(), email: user[0].getEmail() }, process.env.TOKEN_KEY || 'JWT-API-KEY-HERE', {expiresIn: '1h'})
-        return res.status(200).json(token);
+        const payload = {
+          id: user[0].getId(), 
+          username: user[0].getName(), 
+          email: user[0].getEmail()
+        }
+
+        const token = jwt.sign(payload, process.env.TOKEN_KEY || 'JWT-API-KEY', {expiresIn: '1h'})
+        return res.status(200).json({ token: token });
         
       } catch (err) {
         return res.status(500).json({ error: "Erro de Login: " + err });
