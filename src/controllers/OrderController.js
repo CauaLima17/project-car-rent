@@ -1,3 +1,4 @@
+import CarRepository from "../repositories/CarRepository.js";
 import OrderRepository from "../repositories/OrderRepository.js";
 
 const OrderController = {
